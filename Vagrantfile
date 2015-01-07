@@ -8,4 +8,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Set the IP address of unused if it would conflict with the IP you are using already
   config.vm.network :private_network, ip: "192.168.33.14"
 
+  # Install chef
+  config.vm.provision :shell, :inline => "curl -L 'https://www.getchef.com/chef/install.sh' | sudo bash"
+
+  # provisioning with chef solo.
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = ["./chef/cookbooks","./chef/site-cookbooks"]
+    chef.add_recipe "yum"
+  end
+
 end
