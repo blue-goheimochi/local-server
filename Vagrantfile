@@ -17,6 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "git"
     chef.add_recipe "yum"
     chef.add_recipe "ntp"
+    chef.add_recipe "nkf"
   end
 
 end
