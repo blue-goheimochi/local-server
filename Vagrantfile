@@ -19,6 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "selinux"
     chef.add_recipe "ntp"
     chef.add_recipe "nkf"
+    chef.add_recipe "remi"
+    chef.add_recipe "rpmforge"
+    chef.add_recipe "epel"
   end
 
 end
