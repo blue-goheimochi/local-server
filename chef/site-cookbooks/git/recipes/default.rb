@@ -3,6 +3,9 @@
 # Recipe:: default
 #
 
+Chef::Application.fatal!("You must set the default['user']['name'] in attributes/default.rb") if node['user']['name'] == 'Your Name'
+Chef::Application.fatal!("You must set the default['user']['email'] in attributes/default.rb") if node['user']['email'] == 'yourname@example.com'
+
 execute "git config --global user.name" do
   user  "vagrant"
   group "vagrant"
