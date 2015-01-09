@@ -18,6 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "chkconfig"
     chef.add_recipe "yum"
     chef.add_recipe "selinux"
+    chef.add_recipe "openssl"
     chef.add_recipe "ntp"
     chef.add_recipe "nkf"
     chef.add_recipe "remi"
