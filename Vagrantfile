@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["./chef/cookbooks","./chef/site-cookbooks"]
     chef.add_recipe "git"
+    chef.add_recipe "chkconfig"
     chef.add_recipe "yum"
     chef.add_recipe "selinux"
     chef.add_recipe "ntp"
