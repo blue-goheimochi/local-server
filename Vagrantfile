@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "rpmforge"
     chef.add_recipe "epel"
     chef.add_recipe "ruby"
+    chef.add_recipe "jenkins"
   end
 
 end
