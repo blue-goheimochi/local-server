@@ -26,6 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "epel"
     chef.add_recipe "ruby"
     chef.add_recipe "jenkins"
+    chef.add_recipe "selenium-server"
   end
 
 end
