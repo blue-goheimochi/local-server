@@ -8,6 +8,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Set the IP address of unused if it would conflict with the IP you are using already
   config.vm.network :private_network, ip: "192.168.33.14"
 
+  # Set the VirtualBox Configration
+  config.vm.provider "virtualbox" do |vb|
+    # Change memory size
+    vb.customize ["modifyvm", :id, "--memory", 1024]
+  end
+
   # Install chef
   config.vm.provision :shell, :inline => "curl -L 'https://www.getchef.com/chef/install.sh' | sudo bash"
 
