@@ -3,12 +3,9 @@
 # Recipe:: default
 #
 
-node['selenium-server']['dependency-package'].each do |pkg_name|
-  package "#{pkg_name}" do
-    action :install
-    not_if "rpm -q #{pkg_name}"
-  end
-end
+include_recipe "wget"
+include_recipe "java-openjdk"
+include_recipe "java-openjdk-devel"
 
 execute "set selenium server" do
   command <<-EOS

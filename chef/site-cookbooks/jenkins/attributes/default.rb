@@ -2,12 +2,6 @@
 # Cookbook Name:: jenkins
 # Attributes:: default
 
-default['jenkins']['dependency-package'] = [
-  "wget",
-  "java-1.7.0-openjdk",
-  "java-1.7.0-openjdk-devel"
-]
-
 default['jenkins']['repo_url']  = "http://pkg.jenkins-ci.org/redhat/jenkins.repo"
 default['jenkins']['repo_path'] = "/etc/yum.repos.d/jenkins.repo"
 default['jenkins']['repo_key']  = "http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key"
