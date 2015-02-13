@@ -27,6 +27,11 @@ execute "yum groupinstall 'Development tools'" do
   not_if "yum grouplist | sed -n -e '/Installed Groups/,$p' | sed -n -e '/Available Groups/,$!p' | grep -w 'Development tools'"
 end
 
+execute "yum groupinstall 'Japanese Support'" do
+  command "yum -y groupinstall 'Japanese Support'"
+  not_if "yum grouplist | sed -n -e '/Installed Groups/,$p' | sed -n -e '/Available Groups/,$!p' | grep -w 'Japanese Support'"
+end
+
 package "yum-plugin-fastestmirror" do
   action :install
   not_if "rpm -q yum-plugin-fastestmirror"

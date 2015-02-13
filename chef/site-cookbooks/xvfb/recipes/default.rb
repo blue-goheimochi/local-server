@@ -3,6 +3,11 @@
 # Recipe:: default
 #
 
+execute "yum groupinstall 'Japanese Support'" do
+  command "yum -y groupinstall 'Japanese Support'"
+  not_if "yum grouplist | sed -n -e '/Installed Groups/,$p' | sed -n -e '/Available Groups/,$!p' | grep -w 'Japanese Support'"
+end
+
 execute "yum groupinstall 'X Window System'" do
   command "yum -y groupinstall 'X Window System'"
   not_if "yum grouplist | sed -n -e '/Installed Groups/,$p' | sed -n -e '/Available Groups/,$!p' | grep -w 'X Window System$'"
